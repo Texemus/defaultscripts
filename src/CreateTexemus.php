@@ -45,7 +45,7 @@ class CreateTexemus extends Command
         /**
          * Create Folders
          */
-        $createFolders = new Process("mkdir app/Classes mkdir app/Classes/Traits mkdir app/Classes/Abstracts mkdir app/Classes/Interfaces mkdir app/Classes/Observers mkdir app/Models mkdir app/Models/Auth mkdir app/Http/ViewComposers mkdir app/Helpers");
+        $createFolders = new Process("mkdir app/Classes mkdir app/Classes/Traits mkdir app/Classes/Interfaces mkdir app/Classes/Observers mkdir app/Models mkdir app/Classes/Abstracts mkdir app/Models/Auth mkdir app/Http/ViewComposers mkdir app/Helpers");
         $createFolders->run();
 
         /**
@@ -77,10 +77,10 @@ class CreateTexemus extends Command
         /**
          * Migrations
          */
-        $removeMigrations = new Process("rm -rf database/migrations");
+        $removeMigrations = new Process("rm -rf database/migrations/*.*");
         $removeMigrations->run();
 
-        $addNewMigrations = new Process("cp vendor/texemus/default/src/stubs/migrations database/migrations");
+        $addNewMigrations = new Process("cp vendor/texemus/default/src/stubs/migrations/*.* database/migrations");
         $addNewMigrations->run();
 
         /**
@@ -104,7 +104,7 @@ class CreateTexemus extends Command
         /**
          * Models
          */
-        $moveModels = new Process("cp vendor/texemus/default/src/stubs/models/Core app/Models/Core");
+        $moveModels = new Process("cp vendor/texemus/default/src/stubs/models/Core/*.* app/Models/Core");
         $moveModels->run();
 
         /**
@@ -116,8 +116,15 @@ class CreateTexemus extends Command
         /**
          * Abstracts
          */
-        $moveAbstracts = new Process("cp vendor/texemus/default/src/stubs/Abstracts app/Classes/Abstracts");
+        $moveAbstracts = new Process("cp vendor/texemus/default/src/stubs/Abstracts/*.* app/Classes/Abstracts");
         $moveAbstracts->run();
+
+        /**
+         * Permissions
+         */
+
+        $movePermissionChecker = new Process("cp vendor/texemus/default/src/stubs/auth/PermissionChecker.php app/Classes/PermissionChecker.php");
+        $movePermissionChecker->run();
 
     }
 }

@@ -177,6 +177,11 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\HelperServiceProvider::class,
 
+        /*
+         * Third party Providers...
+         */
+
+        Texemus\DefaultScriptsServiceProvider::class,
     ],
 
     /*
@@ -225,6 +230,12 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /**
+         * Own Facades
+         */
+        'PermissionChecker' => App\Classes\PermissionChecker::class,
+
 
     ],
 
