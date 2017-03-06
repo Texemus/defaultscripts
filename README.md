@@ -5,3 +5,7 @@
 #App.php
 
     Texemus\DefaultScriptsServiceProvider::class,
+
+# Terminal
+    
+    php artisan create:texemus
