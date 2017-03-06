@@ -29,8 +29,8 @@ class DefaultScriptsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->commands([
-            Texemus\CreateTexemus::class,
-            Texemus\UpdateTexemus::class,
+            CreateTexemus::class,
+            UpdateTexemus::class,
         ]);
     }
 }
