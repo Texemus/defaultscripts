@@ -30,7 +30,6 @@ class DefaultScriptsServiceProvider extends ServiceProvider
     {
         $this->commands([
             CreateTexemus::class,
-            UpdateTexemus::class,
         ]);
     }
 }
