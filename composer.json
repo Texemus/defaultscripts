@@ -1,0 +1,18 @@
+{
+    "name": "texemus/default",
+    "description": "A Laravel package for Texemus Applications. Feel free to use it.",
+    "type": "library",
+    "license": "MIT",
+    "homepage" : "http://texemus.com",
+    "authors": [
+        {
+            "name": "Chilion Snoek",
+            "email": "c.snoek@texemus.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Texemus\\": "src/"
+      }
+    }
+}
